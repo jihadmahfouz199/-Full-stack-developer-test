@@ -1,0 +1,18 @@
+body {
+    background: #eeeeee;
+}
+
+.main-content {
+    margin-top: 30px;
+}
+
+.main-content .button {
+    float: right;
+    background: #2980B9;
+    color: #ffffff !important;
+    border: 1px solid #ffffff;
+}
+
+.table-container {
+    margin-top: 30px;
+}

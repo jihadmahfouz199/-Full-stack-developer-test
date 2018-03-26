@@ -1,0 +1,36 @@
+<div class="main-content">
+    <section class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <a class="btn button" href="#/items/add/">add item</a>
+            </div>
+            <div class="col-12">
+                <div class="col-6" style="float: left">
+                    <input class="form-control" placeholder="search" ng-model="search" style="width: 210px">
+                </div>
+            </div>
+            <div class="col-12 table-container">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" ng-click="sortName()">Name</th>
+                        <th scope="col" ng-click="sortDescription()">Description</th>
+                        <th scope="col">Tags</th>
+                        <th scope="col">Image</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="i in items | filter:search | orderBy:name:reverse  | orderBy:name:reverseD track by $index">
+                        <th scope="row">{{$index+1}}</th>
+                        <td>{{i.name}}</td>
+                        <td>{{i.description}}</td>
+                        <td><span ng-repeat="t in i.tags track by $index">{{t.tag}}<i ng-if="!$last">,</i></span></td>
+                        <td><img ng-src="images/{{i.picture}}" width="60" height="60"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,33 @@
+<div class="main-content">
+    <section class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <a class="btn button" href="#/items">back to items</a>
+            </div>
+            <div class="col-12">
+                <form>
+                    <div class="form-group">
+                        <label for="itemName">Item Name</label>
+                        <input type="text" ng-model="name" class="form-control" id="itemName" placeholder="item name">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">description</label>
+                        <textarea class="form-control" ng-model="description" id="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <tag-manager tags="tags" autocomplete="allTags"></tag-manager>
+                    </div>
+                    <div class="form-group">
+                        <label class="btn" aria-label="Attach file" nv-file-select="" uploader="uploader"
+                               for="fileUpload">
+                            <md-icon md-font-icon="icon-paperclip"></md-icon>
+                            <md-tooltip><span>Upload File</span></md-tooltip>
+                        </label>
+                        <input type="file" nv-file-select="" ng-hide="true" uploader="uploader" id="fileUpload" multiple/>
+                    </div>
+                    <button ng-click="addItem()" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
